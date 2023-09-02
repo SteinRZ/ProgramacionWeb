@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<!---INICIO DE HEAD--->
+    <head>
+        <title> Videojuegos </title>
+        <!--Estilos CSS-->
+        <style>
+            body{
+                text-align: justify;
+                max-width:900px;
+                margin: 0 auto;
+            }
+            p{
+                font-family: 'Segoe UI';
+                font-size: 18px;
+            }
+            h1{
+                font-family: 'Garnet Capitals';
+            }
+            table{
+                max-width:900px;
+                margin: 0 auto;
+                font-family: 'Segoe UI';
+            }
+            tbody tr:nth-child(odd){
+                background-color: rgb(160, 161, 158);
+            }
+            td:hover{
+                background-color: rgb(148, 146, 146);
+                color: white;
+            }
+            td:active{
+                background-color: rgb(134, 56, 56);
+            }
+
+            .parrafo{
+                color: black;
+                line-height: 1.25em;
+            }
+            .imgN{
+                flex: 33.3%;
+                border-radius: 15px;
+                width: 25%;
+                padding: 5px;
+            }
+            .imgXBX{
+                flex: 33.3%;
+                border-radius: 15px;
+                width: 25%;
+                padding: 5px;
+            }
+            .acomodo-imagen::after{
+                content: "";
+                clear: both;
+                display: flex;
+            }
+
+            #h1_titulo{
+                margin-top: 0;
+            }
+            #h1_N{
+                color: red;
+                margin-top: 0;
+            }
+            #h1_XBX{
+                color: green;
+                margin-top: 0;
+            }
+            #div-left{
+                float: left;
+            }
+            #imgX01{
+                border-radius: 15px;
+                width: 100%;
+            }
+        </style>
+    </head>
+<!---FINAL DE HEAD--->
+
+<!---INICIO DE BODY--->
+    <body>
+        <br>
+        <!---Espacio de encabezado--->
+        <h1 id="h1_titulo"> <center> Consolas de videojuegos en la actualidad </center> </h1>
+        <p class = "parrafo"> 
+            Actualmente el mundo del gaming se encuentra en la 9va generacion de consolas de videojuegos, siendo tres consolas compitiendo dia a dia con la compra de sus consolas, existiendo tres 
+            lideres en el mercado que compiten dia con dia en el mercado intentando ganar la mayor cantidad de ganancias posibles y de ganar la mayoria del mercado. Las tres compañias lideres en el mercado son: 
+            Nintendo, Xbox por parte de Microsoft y PlayStation por parte de Sony. Pero en este espacio solo vamos a hablar solamente de Nintendo y Xbox.
+        </p>
+        <br>
+        <hr>
+
+        <!---Espacio de Nintendo-->
+            <!--Encabezado del espacio-->
+        <div>
+            <div id="div-left">
+                <img id="imglogo01" src="https://logos-download.com/wp-content/uploads/2021/02/Nintendo_Switch_Logo.png" alt="Nintendo Logo" title="Nintendo Logo" width="40" height="40"/>
+            </div>  
+            <div>
+                <h1 id="h1_N"> | Nintendo </h1>
+            </div>  
+        </div>
+            <!--Texto del espacio-->
+        <div>
+            <div>
+                <p class="parrafo">
+                    Actualmente la lider en el mercado de consolas es la gran N con su consola Nintendo Switch, pero, ¿Que es la Nintendo Switch? <br> La nintendo switch es una consola hibrida que se puede usar 
+                    en forma portatil o sobremesa, siendo esto considerado una gran innovacion para los tiempos en que la Nintendo Switch fue anunciada en el año 2016 y saliendo en marzo de 2017. Esta consola y 
+                    su exito instantaneo, supuso un gran alivio economico para Nintendo debido a las perdidas que tuvo el fracaso por la consola Wii U y que estuvo a punto de poner a la gran N en quiebra.
+                </p>
+                <p class="parrafo">
+                    Su lanzamiento dado el 3 de Marzo de 2017 vino con uno de los videojuegos mas aclamados de la historia de los videojuegos, The Legend Of Zelda: Breath of the Wild, que gracias al
+                    lanzamiento de este videojuego la Nintendo Switch tuvo ventas excelentes que dejaban sin stock a diversas tiendas en el mundo y que provoco un fenomeno que siguio por meses hasta
+                    que Nintendo posteriormente arreglaria el problema de abastecimiento de Nintendo Switch.
+                </p>
+            </div>
+        </div>
+        <div class="acomodo-imagen">
+            <center>
+                <img class="imgN" src="https://www.nme.com/wp-content/uploads/2021/07/Nintendo-Switch-OLED-Model.jpg" alt="Nintendo Switch" title="Consola Nintendo Switch" width="205" height="130"/>
+                <img class="imgN" src="https://th.bing.com/th/id/R.707dd4ad620f6af8fd6d2d3afe2d2b4d?rik=SMk5av1j%2fLJE0Q&riu=http%3a%2f%2fcdn.wccftech.com%2fwp-content%2fuploads%2f2017%2f01%2fZelda-Breath-of-the-Wild-screenshots6-1920x1041.jpg&ehk=nFo950vdN%2fwh5RUQCQQpqh8zBla4HUeXqvLPAuRN3tY%3d&risl=&pid=ImgRaw&r=0" alt="Zelda BOTW" title="Zelda BOTW" width="205" height="130"/>
+                <img class="imgN" src="https://th.bing.com/th/id/R.d46d61cb417352ab7766b94373f69d3d?rik=VEEZOSrcoZ5DvA&pid=ImgRaw&r=0" alt="Pokemon Sword & Shield" title="Pokemon Sword & Shield" width="205" height="130"/>
+            </center>
+        </div>
+        <br>
+        <p>Consolas de Nintendo a lo largo de la historia</p>
+        <table>
+            <thead>
+                <tr><th>Consola</th><th>Nombre</th><th>Año de lanzamiento</th><th>Juego destacado</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>NES</td><td>NES</td><td>1983</td><td>Super Mario Bros</td></tr>
+                <tr><td>Game Boy</td><td>Game Boy</td><td>1988</td><td>Tetris</td></tr>
+                <tr><td>SNES</td><td>SNES</td><td>1990</td><td>Star Fox</td></tr>
+                <tr><td>Nintendo 64</td><td>Nintendo 64</td><td>1996</td><td>The Legend of Zelda: Ocarina of Time</td></tr>
+                <tr><td>Nintendo GameCube</td><td>Nintendo GameCube</td><td>2001</td><td>Super Smash Bros. Melee</td></tr>
+                <tr><td>Game Boy Advance</td><td>Game Boy Advance</td><td>2001</td><td>Pokemon</td></tr>
+                <tr><td>Nintendo DS</td><td>Nintendo DS</td><td>2004</td><td>New Super Mario Bros</td></tr>
+                <tr><td>Wii</td><td>Wii</td><td>2006</td><td>Super Mario Galaxy</td></tr>
+                <tr><td>Nintendo 3DS</td><td>Nintendo 3DS</td><td>2011</td><td>Mario Kart 7</td></tr>
+                <tr><td>Wii U</td><td>Wii U</td><td>2012</td><td>Mario Kart 8</td></tr>
+                <tr><td>Nintendo Switch</td><td>Nintendo Switch</td><td>2017</td><td>The Legend of Zelda: Breath of the Wild</td></tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <hr>
+
+        <!---Espacio de Xbox--->
+        <div>
+            <!--Encabezado de espacio-->
+            <div id="div-left">
+                <img id="imglogo02" src="https://logodix.com/logo/20280.png" alt="Xbox Logo" title="Xbox Logo" width="40" height="40"/>
+            </div>  
+            <div>
+                <h1 id="h1_XBX"> | Xbox </h1>
+            </div>  
+        </div>
+        <div>
+            <div>
+                <!--Texto de espacio-->
+                <p class="parrafo">
+                    Xbox, una competidora en el mercado de las consolas de videojuegos, por parte de Microsoft, ofrece actualmente su ultima consola de videojuegos llamada Xbox Series X y otra consola
+                    de la misma linea pero menos potente, la Xbox Series S. Las consolas Xbox Series X|S pertenecientes en la 9va generacion de consolas busca competir ante dos grandes marcas como lo son
+                    Nintendo y PlayStation ofreciendo la consola mas potente del mercado siendo la Xbox Series X y una version menos potente pero mas economica la cual es la Xbox Series S. 
+                </p>
+                <p class="parrafo">
+                    Xbox, en la actualidad ofrece uno de los mejores servicios de videojuegos, el Xbox Gamepass, que ofrece mas de 200 juegos pagando una suscripcion mensual y teniendo acceso a todos los
+                    videojuegos exclusivos, publicados o de estudios de Xbox, juegos de Electronic Arts y tambien ofrece regalos para diferentes videojuegos y la posibilidad del juego en la nube de todo el
+                    catalogo de Xbox Gamepass.
+                </p>
+            </div>
+        </div>
+        <div class="acomodo-imagen">
+            <center>
+                <img class="imgXBX" src="https://sm.ign.com/t/ign_latam/news/x/xbox-serie/xbox-series-x-and-series-s-launch-lineups-announced-by-micro_4ysk.1280.jpg" alt="Xbox Series X|S" title="Consola Xbox Series X & Series S" width="205" height="130"/>
+                <img class="imgXBX" src="https://th.bing.com/th/id/OIP.T12lBzN5x5Qw2Zb6EfmvwQHaEK?pid=ImgDet&rs=1" alt="Halo Infinite" title="Halo Infinite" width="205" height="130"/>
+                <img class="imgXBX" src="https://www.egames.news/__export/1624550181119/sites/debate/img/2021/06/24/starfield.jpg_172596871.jpg" alt="Starfield" title="Starfield" width="205" height="130"/>
+            </center>
+        </div>
+        <br>
+        <p>Consolas de Xbox a lo largo de la historia</p>
+        <table>
+            <thead>
+                <tr><th>Consola</th><th>Nombre</th><th>Año de lanzamiento</th><th>Juego destacado</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Xbox</td><td>XBOX</td><td>2001</td><td>Halo</td></tr>
+                <tr><td>Xbox 360</td><td>XBOX 360</td><td>2005</td><td>Halo 3</td></tr>
+                <tr><td>Xbox One</td><td>XBOX ONE</td><td>2013</td><td>Halo 5 Guardians</td></tr>
+                <tr><td>Xbox Series X</td><td>XBOX SERIES X|S</td><td>2020</td><td>Halo Infinite</td></tr>
+            </tbody>
+        </table>
+        <br>
+    </body>
+<!---FINAL DE BODY--->
+</html>
