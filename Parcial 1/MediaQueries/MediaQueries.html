@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Media Queries</title>
+        <style>
+            *{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            .caja{
+                width: calc((100%/4) - 20px);
+                height: 100px;
+                background-color: red;
+                color: white;
+                border: 6px solid blue;
+                float: left;
+                margin: 10px;
+            }
+
+            #caja1:hover{
+                transform: rotate(30deg);
+                cursor: pointer;
+                background-color: blue;
+                border: 6px solid red;
+            }
+
+            #caja2:hover{
+                transform: scale(1.2);
+                cursor: pointer;
+                background-color: blue;
+                border: 6px solid red;
+            }
+            #caja3:hover{
+                transform: skew(30deg, 10deg);
+                cursor: pointer;
+                background-color: blue;
+                border: 6px solid red;
+            }
+            #caja4:hover{
+                transform:translate(50px);
+                cursor: pointer;
+                background-color: blue;
+                border: 6px solid red;
+            }
+            /* Estilos aplicables a los diferentes tipos de pantallas*/
+            @media screen and (max-width: 400px){
+                #caja1, #caja2, #caja3, #caja4{
+                    clear:left;
+                    width: calc(100% - 20px);
+                }
+            }
+
+            @media screen and (min-width: 401px) and (max-width: 900px){
+                #caja1, #caja2{
+                    width: ((100% / 2) - 20px);
+                }
+                #caja3, #caja4{
+                    clear: left;
+                    width: calc(100% - 20px);
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="contenedor">
+            <div id="caja1" class="caja">Caja 1</div>
+            <div id="caja2" class="caja">Caja 2</div>
+            <div id="caja3" class="caja">Caja 3</div>
+            <div id="caja4" class="caja">Caja 4</div>
+        </div>
+    </body>
+</html>
