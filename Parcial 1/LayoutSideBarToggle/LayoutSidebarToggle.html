@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Layout Sidebar</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .cont{
+                font-family:'Lucida Sans';
+                font-size:x-large;
+                color: white;
+                height: 100%;
+            }
+
+            #header{
+                background-color: red;
+                border: 6px solid blue;
+                position: static;
+                top: 0%;
+                width: 100%;
+                height: 10%;
+            }
+            #sidebar{
+                background-color: blue;
+                border: 6px solid red;
+                width: 30%;
+                left: 0%;
+                position: absolute;
+            }
+            #content{
+                background-color: red;
+                border: 6px solid blue;
+                width: 70%;
+                right: 0%;
+                position: absolute;
+            }
+            
+            input#toggle{
+                display: none;
+            }
+            input:checked + div#sidebar{
+                display: none;
+            }
+            input:checked ~ div#content{
+                width: 100%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="header" class="cont"><center>Header</center></div>
+        
+        <input id="toggle" type="checkbox">
+        <div id="sidebar" class="cont"><center>Sidebar</center></div>
+        
+        <div id="content" class="cont">
+            <label for="toggle">Menu</label>
+            <center>Content</center>
+        </div>
+    </body>
+</html>
