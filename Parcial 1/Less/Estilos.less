@@ -1,0 +1,90 @@
+body{
+    text-align: justify;
+    max-width:900px;
+    margin: 0 auto;
+}
+.parrafo{
+    color: black;
+    line-height: 1.25em;
+}
+.imgN{
+    flex: 33.3%;
+    border-radius: 15px;
+    width: 25%;
+    padding: 5px;
+}
+.imgXBX{
+    flex: 33.3%;
+    border-radius: 15px;
+    width: 25%;
+    padding: 5px;
+}
+.acomodo-imagen::after{
+    content: "";
+    clear: both;
+    display: flex;
+}
+p{
+    font-family: 'Segoe UI';
+    font-size: 18px;
+}
+h1{
+    font-family: 'Garnet Capitals';
+}
+#h1_titulo{
+    margin-top: 0;
+}
+#h1_N{
+    color: red;
+    margin-top: 0;
+}
+#h1_XBX{
+    color: green;
+    margin-top: 0;
+}
+#div01{
+    float: left;
+}
+#div02{
+    float: right;
+}
+#div03{
+    float: left;
+}
+#div04{
+    float: right;
+}
+#imgX01{
+    border-radius: 15px;
+    width: 100%;
+}
+/* Less */
+/* Variables */
+@color-primario: purple;
+@color-secundario: green;
+
+body:has(input:checked){
+    background-color: var(@color-secundario);
+}
+input:checked + div#contenedor{
+    background-color: var(@color-secundario);
+}
+div#contenedor{
+    font-family: 'Courier New', Courier, monospace;
+    h1{
+        color: red;
+    }
+    p{
+        color: blue;
+    }
+    background-color: var(@color-primario);
+}
+/* Mixins */
+.rounded-corners (@radius: 10px){
+    border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+}
+#contenedor{
+    .rounded-corners(15px);
+}
