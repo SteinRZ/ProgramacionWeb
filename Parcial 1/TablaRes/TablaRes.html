@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        table{
+            width: 100%;
+            font-family: 'Lucida Sans';
+        }
+
+        table, thead, tbody, tr, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tbody td:nth-child(even){
+                background-color: gainsboro;
+        }
+
+        th{
+            background-color: rgb(106, 106, 238);
+            font-weight: bolder;
+        }
+
+        .hour{
+            background-color: rgb(106, 106, 238);
+            font-weight: bolder;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, tr, th, td{
+            display: block;
+            }
+            thead{
+                display: none;
+            }
+            td{
+                padding-left: 50%;
+                height: calc(2em + 1em);
+            }
+            
+            td:nth-child(2)::before{
+                content: "Lunes";
+                position: absolute;
+                left: 10px;
+            }
+            td:nth-child(3)::before{
+                content: "Martes";
+                position: absolute;
+                left: 10px;
+            }
+            td:nth-child(4)::before{
+                content: "Miercoles";
+                position: absolute;
+                left: 10px;
+            }
+            td:nth-child(5)::before{
+                content: "Jueves";
+                position: absolute;
+                left: 10px;
+            }
+            td:nth-child(6)::before{
+                content: "Viernes";
+                position: absolute;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="hour">07:00am a 08:00am</td>
+                <td>Programacion web</td>
+                <td>Programacion web</td>
+                <td>Programacion web</td>
+                <td>Programacion web</td>
+                <td>Programacion web</td>
+            </tr>
+            <tr>
+                <td class="hour">08:00am a 09:00am</td>
+                <td>Arquitectura de computadoras</td>
+                <td>Sistemas operativos</td>
+                <td>Arquitectura de computadoras</td>
+                <td>Sistemas operativos</td>
+                <td>Arquitectura de computadoras</td>
+            </tr>
+            <tr>
+                <td class="hour">09:00am a 10:00am</td>
+                <td></td>
+                <td>Sistemas operativos</td>
+                <td>Arquitectura de computadoras</td>
+                <td>Sistemas operativos</td>
+                <td>Arquitectura de computadoras</td>
+            </tr>
+            <tr>
+                <td class="hour">10:00am a 11:00am</td>
+                <td></td>
+                <td>Graficacion</td>
+                <td>Graficacion</td>
+                <td>Graficacion</td>
+                <td>Graficacion</td>
+            </tr>
+            <tr>
+                <td class="hour">11:00am a 12:00pm</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="hour">12:00pm a 13:00pm</td>
+                <td>Fundamentos de telecomunicaciones</td>
+                <td>Ingenieria de software</td>
+                <td>Fundamentos de telecomunicaciones</td>
+                <td>Ingenieria de software</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="hour">13:00pm a 14:00pm</td>
+                <td>Fundamentos de telecomunicaciones</td>
+                <td>Ingenieria de software</td>
+                <td>Fundamentos de telecomunicaciones</td>
+                <td>Ingenieria de software</td>
+                <td>Ingenieria de software</td>
+            </tr>
+            <tr>
+                <td class="hour">14:00pm a 15:00pm</td>
+                <td>Taller de base de datos</td>
+                <td>Taller de base de datos</td>
+                <td>Taller de base de datos</td>
+                <td>Taller de base de datos</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
