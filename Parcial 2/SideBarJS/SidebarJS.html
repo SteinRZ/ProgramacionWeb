@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Layout Sidebar</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .cont{
+                font-family:'Lucida Sans';
+                font-size:x-large;
+                color: white;
+                height: 100%;
+            }
+            h3{
+                text-align: center;
+            }
+
+            #header{
+                background-color: red;
+                border: 6px solid blue;
+                position: static;
+                top: 0%;
+                width: 100%;
+                height: 10%;
+            }
+            #sidebar{
+                background-color: blue;
+                border: 6px solid red;
+                width: 30%;
+                left: 0%;
+                position: absolute;
+            }
+            #content{
+                background-color: red;
+                border: 6px solid blue;
+                width: 70%;
+                right: 0%;
+                position: absolute;
+            }
+
+            .sidebarEscondido{
+                display: none;
+            }
+            .contenidoAlCien{
+                width: 100% !important;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="header" class="cont"><h3>Header</h3></div>
+        <div id="sidebar" class="cont"><h3>Sidebar</h3></div>
+        <div id="content" class="cont">
+            <button id="btn" type="button">ToogleMenu</button>
+            <h3>Content</h3>
+        </div>
+        
+        <script>
+            document.getElementById("btn").addEventListener("click", function(){
+                console.log("Click en el boton");
+
+                document.getElementById("sidebar").classList.toggle("sidebarEscondido");
+                document.getElementById("content").classList.toggle("contenidoAlCien");
+            })
+        </script>
+
+    </body>
+</html>
