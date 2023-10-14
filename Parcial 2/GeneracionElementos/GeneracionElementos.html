@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: 'Lucida Sans';
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <h1>Peliculas favoritas</h1>
+    </div>
+    <script>
+        let encabezado = ['Titulo','Fecha de lanzamiento','Cast','Director','Productora'];
+        let datos = [{
+            titulo: "The Batman",
+            fecha: "2 de marzo de 2022",
+            cast: "Robert Pattinson, Zoe Kravitz, Jeffrey Wright",
+            director: "Matt Reeves",
+            productora: "Warner Bros"
+        },{
+            titulo: "The Super Mario Bros Movie",
+            fecha: "5 de abril de 2023",
+            cast: "Chris Pratt, Anya Taylor Joy, Charlie Day",
+            director: "Aaron Horvath y Michael Jelenic",
+            productora: "Universal y Nintendo"
+        },{
+            titulo: "Evertything Everywhere All At Once",
+            fecha: "23 de junio de 2022",
+            cast: "Michelle Yeoh, Stephanie Hsu, Jamie Lee Curtis",
+            director: "Daniel Kwan y Daniel Scheinert",
+            productora: "A24"
+        },{
+            titulo: "Eternal Sunshine Of The Spotless Mind",
+            fecha: "19 de marzo de 2004",
+            cast: "Jim Carrey, Kate Winslet, Tom Wikinson",
+            director: "Michel Gondry",
+            productora: "Anonymous Content"
+        },{
+            titulo: "Interstellar",
+            fecha: "6 de noviembre de 2014",
+            cast: "Mattew McConaughey, Anne Hathaway, Jessica Chastain",
+            director: "Christopher Nolan",
+            productora: "Warner Bros"
+        },{
+            titulo: "About Time",
+            fecha: "6 de diciembre de 2013",
+            cast: "Domnhnall Glesson, Rachel McAdams, Bill Nighy",
+            director: "Richard Curtis",
+            productora: "Working Title Films"
+        },{
+            titulo: "Evangelion 3.0 + 1.0: Thrice Upon A Time",
+            fecha: "8 de marzo de 2021",
+            cast: "Megumi Ogata, Megumi Hayashibara, Yūko Miyamura",
+            director: "Hideaki Anno",
+            productora: "Studio Khara"
+        },{
+            titulo: "A Silent Voice",
+            fecha: "20 de septiembre de 2016",
+            cast: "Miyu Irino, Saori Hayami, Megumi Han",
+            director: "Naoko Yamada",
+            productora: "Kyoto Animation"
+        },{
+            titulo: "Rogue One: A Star Wars Story",
+            fecha: "15 de diciembre de 2016",
+            cast: "Felicity Jones, Diego Luna, Alan Tudyk",
+            director: "Gareth Edwards",
+            productora: "Lucasfilm Ltd"
+        },{
+            titulo: "Shrek 2",
+            fecha: "19 de mayo de 2004",
+            cast: "Mike Myers, Eddie Murphy, Cameron Diaz",
+            director: "Andrew Adamson",
+            productora: "Dreamworks Animation"
+        }];
+
+        let tabla = document.createElement("table");
+        tabla.style.width = "100%";
+        tabla.style.fontFamily = "Lucida Sans"
+        tabla.style.border = "1px solid black";
+
+        let tablaEncabezado = document.createElement("thead");
+
+        let tablaFila = document.createElement("tr");
+        tablaFila.style.border = "1px solid black";
+
+        /* Recorrer arreglo con flecha, Creacion de encabezado de la tabla */
+        encabezado.forEach(elemento => {
+            let th = document.createElement("th");
+            th.innerText = elemento;
+            tablaFila.appendChild(th);
+        });
+
+        tablaEncabezado.appendChild(tablaFila);
+        tabla.appendChild(tablaEncabezado);
+
+        tablaCuerpo = document.createElement("tbody");
+
+        /* Recorrer arreglo con function, Ingreso de datos en la tabla*/
+        datos.forEach(function(elemento) {  
+            let tablaFila = document.createElement("tr");
+            
+            let td1 = document.createElement("td");
+            td1.innerText = elemento.titulo;
+            td1.style.border = "1px solid black";
+            tablaFila.appendChild(td1);
+
+            let td2 = document.createElement("td");
+            td2.innerText = elemento.fecha;
+            td2.style.border = "1px solid black";
+            tablaFila.appendChild(td2);
+
+            let td3 = document.createElement("td");
+            td3.innerText = elemento.cast;
+            td3.style.border = "1px solid black";
+            tablaFila.appendChild(td3);
+
+            let td4 = document.createElement("td");
+            td4.innerText = elemento.director;
+            td4.style.border = "1px solid black";
+            tablaFila.appendChild(td4);
+
+            let td5 = document.createElement("td");
+            td5.innerText = elemento.productora;
+            td5.style.border = "1px solid black";
+            tablaFila.appendChild(td5);
+
+            tablaCuerpo.appendChild(tablaFila);
+        });
+
+        tabla.appendChild(tablaCuerpo);
+
+        document.getElementById("contenedor").appendChild(tabla);
+    </script>
+</body>
+</html>

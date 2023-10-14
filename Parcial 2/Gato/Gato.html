@@ -127,7 +127,6 @@
                     }
                 document.getElementById(e.target.id).innerText = caracter;
                 }
-                
             })
 
             document.getElementById("btnLimpiar").addEventListener("click", function(){
@@ -137,6 +136,7 @@
                     elemento.innerText="";
                     elemento.classList.remove('primerJugador');
                     elemento.classList.remove('segundoJugador');
+                    caracter = "X";
                 }
             })
         </script>
