@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #e0e0e0;
+	color: #1d1d1d;
+}
+
+h1{
+    padding-bottom: 5px;
+}
+
+#header{
+    background-color: #0B0B3B;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.content {
+	width: 90%;
+	max-width: 1000px;
+	margin: 40px auto 100px auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+}
+
+.content .pelicula {
+	text-align: center;
+}
+
+.content .pelicula .titulo {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.content .pelicula .poster {
+	width: 100%;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <button id="btn">Peticion XMLHTTPREQUEST</button>
+    <button id="btnFetch">Peticion FETCH</button>
+    <button id="btnAsync">Peticion ASYNC AWAIT</button>
+    <button id="btnJQ">Peticion JQUERY</button>
+    <button id="btnAxios">Peticion AXIOS</button>
+    <div id="chuck"></div>
+    <script>
+        window.onload=function(){
+            /* XMLHTTPREQUEST */
+            document.getElementById("btn").addEventListener("click",()=>{
+                const xhr = new XMLHttpRequest();
+                xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === this.DONE) {
+                    console.log(this.responseText);
+                    let objectoRespuesta=JSON.parse(this.responseText)
+                    console.log(objectoRespuesta.value);
+                    document.getElementById("chuck").innerText=objectoRespuesta.value;
+                }
+                });
+                xhr.open("GET", "https://api.chucknorris.io/jokes/random");
+                xhr.send();
+            });
+            
+            /* FETCH */
+            document.getElementById("btnFetch").addEventListener("click",() =>{
+                fetch("https://api.chucknorris.io/jokes/random")
+                    .then(objRespuesta => objRespuesta.json())
+                        .then(datojson => document.getElementById("chuck").innerText=datojson.value);
+            });
+
+            /* ASYNC AWAIT */
+            document.getElementById("btnAsync").addEventListener("click", async () => {
+                let objectoRespuesta = await fetch("https://api.chucknorris.io/jokes/random")
+                let datojson = await objectoRespuesta.json();
+                document.getElementById("chuck").innerText=datojson.value;
+            });
+
+            /* JQUERY */
+            document.getElementById("btnJQ").addEventListener("click", async () => {
+                $.getJSON("https://api.chucknorris.io/jokes/random"), function ( datojson ){
+                    document.getElementById("chuck").innerText=datojson.value;
+                }
+            });
+
+            /* AXIOS HTTP */
+            document.getElementById("btnAxios").addEventListener("click", async () => {
+                axios({
+                    method: 'get',
+                    url: 'https://api.chucknorris.io/jokes/random',
+                    responsetype: 'json'
+                })
+                    .then(function (datojson){
+                        document.getElementById("chuck").innerText=datojson.value;
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
