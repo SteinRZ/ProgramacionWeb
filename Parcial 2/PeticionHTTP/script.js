@@ -1,14 +1,26 @@
 window.onload=function(){
     let pagina = 1;
+    document.getElementById('btnAnterior').addEventListener("click",()=>{
+        if(pagina > 1){
+            pagina -= 1;
+            cargarPeliculasAsync();
+        }
+    });
+    
+    document.getElementById('btnSiguiente').addEventListener("click",()=>{
+        if(pagina < 1000){
+            pagina += 1;
+            cargarPeliculasAsync();
+        }
+    });
 
     /* Peticion mediante XML Http Request */
-    const cargarPeliculasXML = () => {
+    document.getElementById("btnXML").addEventListener("click",()=>{
         var xhr = new XMLHttpRequest();
         xhr.open('GET', `https://api.themoviedb.org/3/movie/popular?api_key=ddc7740b9f6971bffb0cced6cb639525&language=es-MX&page=${pagina}`, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var datos = JSON.parse(xhr.responseText);
-                
                 let peliculas = '';
                 datos.results.forEach(pelicula => {
                     peliculas += `
@@ -18,19 +30,15 @@ window.onload=function(){
                         </div>
                     `;
                 });
-
                 document.getElementById('content').innerHTML = peliculas;
             }
         }
         xhr.send();
-    }
-    document.getElementById("btnXML").addEventListener("click",()=>{
-        cargarPeliculasXML();
         alert("Se realizo la peticion mediante XMLHttpRequest");
     })
 
     /* Peticion mediante Fetch */
-    const cargarPeliculasFetch = () => {
+    document.getElementById("btnFetch").addEventListener("click",()=>{
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=ddc7740b9f6971bffb0cced6cb639525&language=es-MX&page=${pagina}`)
             .then(respuesta => {
                 if(respuesta.status === 200){
@@ -51,12 +59,6 @@ window.onload=function(){
                 });
             document.getElementById('content').innerHTML = peliculas;
         })
-        .catch(error => {
-            console.log(error);
-        });
-    }
-    document.getElementById("btnFetch").addEventListener("click",()=>{
-        cargarPeliculasFetch();
         alert("Se realizo la peticion mediante Fetch");
     })
 
@@ -64,13 +66,8 @@ window.onload=function(){
     const cargarPeliculasAsync = async() => {
         try {
             const respuesta = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=ddc7740b9f6971bffb0cced6cb639525&language=es-MX&page=${pagina}`);
-        
-            console.log(respuesta);
-    
-            // Si la respuesta es correcta
             if(respuesta.status === 200){
                 const datos = await respuesta.json();
-                
                 let peliculas = '';
                 datos.results.forEach(pelicula => {
                     peliculas += `
@@ -80,10 +77,8 @@ window.onload=function(){
                         </div>
                     `;
                 });
-
                 document.getElementById('content').innerHTML = peliculas;
             }
-    
         } catch(error) {
             console.log(error);
         }
@@ -94,7 +89,7 @@ window.onload=function(){
     })
 
     /* Peticion mediante JQuery */
-    const cargarPeliculasJQ = () => {
+    document.getElementById("btnJQ").addEventListener("click",()=>{
         $.ajax({
             url: 'https://api.themoviedb.org/3/movie/popular?api_key=ddc7740b9f6971bffb0cced6cb639525&language=es-MX&page=1',
             type: 'GET',
@@ -111,18 +106,12 @@ window.onload=function(){
     
                 $('#content').html(peliculas);
             },
-            error: function(error) {
-                console.log(error);
-            }
         });
-    }
-    document.getElementById("btnJQ").addEventListener("click",()=>{
-        cargarPeliculasJQ();
         alert("Se realizo la peticion mediante JQuery");
     })
 
     /* Peticion mediante Axios */
-    const cargarPeliculasAxios = () => {
+    document.getElementById("btnAxios").addEventListener("click",()=>{
         axios.get('https://api.themoviedb.org/3/movie/popular?api_key=ddc7740b9f6971bffb0cced6cb639525&language=es-MX&page=1')
         .then(function (respuesta) {
             let datos = respuesta.data;
@@ -134,16 +123,9 @@ window.onload=function(){
                         <h3 class="titulo">${pelicula.title}</h3>
                     </div>
                 `;
-            });
-    
+            });   
             document.getElementById('content').innerHTML = peliculas;
         })
-        .catch(function (error) {
-            console.log(error);
-        });
-    }
-    document.getElementById("btnAxios").addEventListener("click",()=>{
-        cargarPeliculasAxios();
         alert("Se realizo la peticion mediante Axios");
     });
 }

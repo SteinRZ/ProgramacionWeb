@@ -10,11 +10,7 @@ body {
 	color: #1d1d1d;
 }
 
-h1{
-    padding-bottom: 5px;
-}
-
-#header{
+.header{
     background-color: #0B0B3B;
     color: white;
     text-align: center;
@@ -44,4 +40,16 @@ h1{
 	width: 100%;
 	margin-bottom: 10px;
 	border-radius: 5px;
+}
+
+.page{
+	background-color: #0B0B3B;
+    color: white;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 10px;
 }
