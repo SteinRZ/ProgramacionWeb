@@ -12,8 +12,8 @@ body {
 .form {
     padding-top: 45px;
     padding-bottom: 45px;
-    padding-left: 250px;
-    padding-right: 250px;    
+    padding-left: 350px;
+    padding-right: 350px;    
 }
 
 .title{
@@ -22,6 +22,10 @@ body {
 }
 
 .campoCorreoElectronico {
+    padding-top: 25px;
+}
+
+.campoTelefono {
     padding-top: 25px;
 }
 
