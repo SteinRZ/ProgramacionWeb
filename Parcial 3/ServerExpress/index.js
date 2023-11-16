@@ -1,12 +1,40 @@
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
+const mysql2 = require('mysql2');
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 
-app.get('/', (req, res)=>{
-    console.log(res.query)
-    res.json({mensaje:"Server Express respondiendo a get"});
+//Conexion a base de datos
+const connection = mysql2.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Happy20022003!',
+    database: 'TALLERBD'
+});
+
+app.get('/usuarios', (req, res)=>{
+    console.log(req.query.ID_MAESTRO);
+    let consulta = ''
+    if(typeof(req.query.ID_MAESTRO)=='undefined'){
+        consulta = `select * from usuarios`
+    } else {
+        consulta = `select * from usuarios where ID_CLIENTE=${req.query.ID_MAESTRO}`
+    }
+    console.log(consulta);
+
+    connection.query(
+        'SELECT * FROM MAESTRO',
+        function(err, results, fields) {
+            console.log(results); // results contains rows returned by server
+            console.log(fields); // fields contains extra meta data about results, if available
+    
+            console.log(results);
+            res.json(results);
+        }
+    );
+    //console.log(res.query)
+    //res.json({mensaje:"Server Express respondiendo a get"});
 });
 
 app.post('/', (req,res)=>{
