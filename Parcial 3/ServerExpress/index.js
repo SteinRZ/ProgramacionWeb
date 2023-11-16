@@ -10,21 +10,21 @@ const connection = mysql2.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'Happy20022003!',
-    database: 'TALLERBD'
+    database: 'WEB'
 });
 
-app.get('/usuarios', (req, res)=>{
-    console.log(req.query.ID_MAESTRO);
+app.get('/', (req, res)=>{
+    /*console.log(req.query.ID_ALUMNO);
     let consulta = ''
-    if(typeof(req.query.ID_MAESTRO)=='undefined'){
-        consulta = `select * from usuarios`
+    if(typeof(req.query.ID_ALUMNO)=='undefined'){
+        consulta = `select * from ALUMNO`
     } else {
-        consulta = `select * from usuarios where ID_CLIENTE=${req.query.ID_MAESTRO}`
+        consulta = `select * from ALUMNO where ID_ALUMNO=${req.query.ID_ALUMNO}`
     }
-    console.log(consulta);
+    console.log(consulta);*/
 
     connection.query(
-        'SELECT * FROM MAESTRO',
+        'SELECT * FROM alumno',
         function(err, results, fields) {
             console.log(results); // results contains rows returned by server
             console.log(fields); // fields contains extra meta data about results, if available
