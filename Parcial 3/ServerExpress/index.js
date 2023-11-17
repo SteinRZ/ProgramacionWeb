@@ -1,9 +1,9 @@
 const express = require('express');
-const cors = require('cors');
+//const cors = require('cors');
 const mysql2 = require('mysql2');
 const app = express();
 
-app.use(cors());
+//app.use(cors());
 
 //Conexion a base de datos
 const connection = mysql2.createConnection({
@@ -14,27 +14,26 @@ const connection = mysql2.createConnection({
 });
 
 app.get('/', (req, res)=>{
-    /*console.log(req.query.ID_ALUMNO);
+    console.log(req.query.ID_ALUMNO);
     let consulta = ''
     if(typeof(req.query.ID_ALUMNO)=='undefined'){
         consulta = `select * from ALUMNO`
     } else {
         consulta = `select * from ALUMNO where ID_ALUMNO=${req.query.ID_ALUMNO}`
     }
-    console.log(consulta);*/
+    console.log(consulta);
 
     connection.query(
-        'SELECT * FROM alumno',
+        consulta,
         function(err, results, fields) {
-            console.log(results); // results contains rows returned by server
-            console.log(fields); // fields contains extra meta data about results, if available
-    
-            console.log(results);
-            res.json(results);
+            if(results.length==0){
+                res.json({mensaje:"Este alumno no existe"});
+            }
+            else{
+                res.json(results);
+            }
         }
     );
-    //console.log(res.query)
-    //res.json({mensaje:"Server Express respondiendo a get"});
 });
 
 app.post('/', (req,res)=>{
