@@ -34,15 +34,25 @@ body {
     margin-top: 10px;
 }
 
+#btnEliminar {
+    margin-top: 10px;
+}
+
 /* ESTILOS DE RESULTS */
 .results {
     margin-top: 100px;
     margin-left: 200px;
     margin-right: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     clear: both;
 }
 
 .results > div {
     padding-bottom: 30px;
+}
+
+/* ESTILOS DE BUTTONBOTTOM */
+.buttonBottom {
+    text-align: center;
+    margin-bottom: 30px;
 }

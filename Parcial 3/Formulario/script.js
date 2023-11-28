@@ -1,4 +1,5 @@
 window.onload=function(){
+    //? Traer los ID y titulos de las peliculas
     new gridjs.Grid({
         search: true,
         pagination: true,
@@ -7,7 +8,7 @@ window.onload=function(){
         height: '200px',
         width: '1200px',
         pagination: {
-            limit: 10
+            limit: 20
         },
         columns: ['ID', 'Titulo'],
         server: {
@@ -18,6 +19,7 @@ window.onload=function(){
             } 
     }).render(document.getElementById("tabla"));
 
+    //? Boton para consultar un elemento especifico
     document.getElementById("btnConsultar").addEventListener("click", async () => {
             let id = document.getElementById("inputID").value;
             let response = await fetch(`http://localhost:8082/pelicula?ID=${id}`, {method:"GET"});
@@ -37,6 +39,56 @@ window.onload=function(){
                 document.getElementById("director").value=data.datos.DIRECTOR;
                 document.getElementById("productora").value=data.datos.PRODUCTORA;
             }
+        });
 
-            })
+    //? Boton para agregar un nuevo elemento
+    document.getElementById("btnAgregar").addEventListener("click", async () => {
+        let vTitulo = document.getElementById("titulo").value;
+        let vFecha = document.getElementById("fecha").value;
+        let vCast = document.getElementById("cast").value;
+        let vDirector = document.getElementById("director").value;
+        let vProductora = document.getElementById("productora").value;
+        await fetch(`http://localhost:8082/pelicula?TITULO=${vTitulo}&FECHA_LANZAMIENTO=${vFecha}&CAST=${vCast}&DIRECTOR=${vDirector}&PRODUCTORA=${vProductora}`, {method:"POST"})
+            .then(response => response.json())
+                .then(data => {
+                    if (data.status === 1) {
+                        alert(data.mensaje);
+                    } else {
+                        alert(data.mensaje);
+                    }
+                })
+    });
+
+    //? Boton para modificar un elemento
+    document.getElementById("btnModificar").addEventListener("click", async () => {
+        let vID = document.getElementById("inputID").value;
+        let vTitulo = document.getElementById("titulo").value;
+        let vFecha = document.getElementById("fecha").value;
+        let vCast = document.getElementById("cast").value;
+        let vDirector = document.getElementById("director").value;
+        let vProductora = document.getElementById("productora").value;
+        await fetch(`http://localhost:8082/pelicula?ID=${vID}&TITULO=${vTitulo}&FECHA_LANZAMIENTO=${vFecha}&CAST=${vCast}&DIRECTOR=${vDirector}&PRODUCTORA=${vProductora}`, {method:"PUT"})
+            .then(response => response.json())
+                .then(data => {
+                    if (data.status === 1) {
+                        alert(data.mensaje);
+                    } else {
+                        alert(data.mensaje);
+                    }
+                })
+    });
+
+    //? Boton para eliminar un elemento especifico
+    document.getElementById("btnEliminar").addEventListener("click", async () => {
+        let id = document.getElementById("inputID").value;
+        await fetch(`http://localhost:8082/pelicula?ID=${id}`, {method:"DELETE"})
+            .then(response => response.json())
+                .then(data => {
+                    if (data.status === 1) {
+                        alert(data.mensaje);
+                    } else {
+                        alert(data.mensaje);
+                    }
+                })
+    });
 }
