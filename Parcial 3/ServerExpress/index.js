@@ -20,7 +20,7 @@ app.get('/', (req, res)=>{
     if(typeof(req.query.ID_PELICULA)=='undefined'){
         consulta = `select * from PELICULA`
     } else {
-        consulta = `select * from PELICULA where ID_PELICULA=${req.query.ID_ALUMNO}`
+        consulta = `select * from PELICULA where ID_PELICULA=${req.query.ID_PELICULA}`
     }
     console.log(consulta);
 
