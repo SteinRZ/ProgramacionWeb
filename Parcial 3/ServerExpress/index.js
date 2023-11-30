@@ -183,7 +183,7 @@ app.delete('/pelicula', (req, res) => {
 
 //? Crear PDF de la consulta
 app.get('/pelicula/formato', (req, res) => {
-    const doc = new jsPDF();
+    let doc = new jsPDF();
     doc.setFontSize(12);
     const titulo = req.query.titulo;
     const fecha = req.query.fecha;

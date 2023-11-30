@@ -93,7 +93,7 @@ window.onload = function () {
     });
 
     //? Boton para generar un PDF de la consulta
-    document.getElementById("btnPDF").addEventListener("click", async () => {
+    document.getElementById("btnPDFConsulta").addEventListener("click", async () => {
         let vID = document.getElementById("inputID").value;
         let vTitulo = document.getElementById("titulo").value;
         let vFecha = document.getElementById("fecha").value;
