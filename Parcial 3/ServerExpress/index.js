@@ -200,7 +200,7 @@ app.get('/pelicula/formato', (req, res) => {
     doc.text(director, 10, 110);
     doc.text('Productora:', 10, 130);
     doc.text(productora, 10, 140);
-    let archivoPDF = path.join('C:\\wamp64\\www\\RepositoriosGithub\\Parcial 3\\Formulario\\documents', 'consulta.pdf');
+    let archivoPDF = path.join('C:\\wamp64\\www\\RepositoriosGithub\\CRUD\\documents', 'consulta.pdf');
     doc.save(archivoPDF, function (err) {
         if (err) {
             return res.sendStatus(500);
