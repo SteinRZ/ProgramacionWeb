@@ -12,7 +12,7 @@ app.use(cors()); //*Para evitar error de cors
 const connection = mysql2.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'XXXX',
+    password: '123',
     database: 'WEB'
 });
 
